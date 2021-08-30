@@ -1,9 +1,7 @@
 const Movies =  require('../models/movies');
 const imdbDetail = require('../utils/imdb'); 
 const base64Id = require('base64id');
-// const { Movie } = require('imdb-api');
 const Sequelize = require('sequelize');
-const e = require('express');
 const Op = Sequelize.Op;
 
 exports.searchMovieName = async(req,res,next)=>{
@@ -65,7 +63,7 @@ exports.searchMovieByYear = async(req,res,next)=>{
               }
           }).catch(err=>{
               console.log(err);
-              return res.status(200).json({status:1,msg:'Something went wrong'});
+              return res.status(500).json({status:1,msg:'Something went wrong'});
           });
 }
 
