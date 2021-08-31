@@ -114,4 +114,3 @@ exports.searchMovieByGenre = async(req,res,next)=>{
             return res.status(500).json({status:0,msg:'Something went wrong'});
           });
 }
-

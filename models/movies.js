@@ -31,7 +31,7 @@ const Movies = sequelize.define('movie',{
 
 Movies.moviesBetweenYears = async(fromDate,toDate)=>{
     console.log(fromDate,toDate);
-    return sequelize.query(`select * from movies where Extract(year from "createdAt") between :fromDate and :toDate `,{
+    return sequelize.query(`select * from movies where Extract(year from "releasedYear") between :fromDate and :toDate `,{
         replacements:{
             fromDate:fromDate,
             toDate:toDate
